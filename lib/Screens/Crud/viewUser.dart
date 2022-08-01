@@ -15,7 +15,7 @@ class _ViewUserState extends State<ViewUser> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("LIFESAVER: HEALTH GUARDIAN"),
+          title: const Text("Health Records"),
         ),
         body: Container(
           padding: EdgeInsets.all(16.0),
@@ -23,7 +23,7 @@ class _ViewUserState extends State<ViewUser> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Full Details",
+                "User Records",
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.blueGrey,
@@ -34,9 +34,9 @@ class _ViewUserState extends State<ViewUser> {
               ),
               Row(
                 children: [
-                  const Text('Name',
+                  const Text('Health Condition',
                       style: TextStyle(
-                          color: Colors.teal,
+                          color: Colors.blue,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(
@@ -50,9 +50,9 @@ class _ViewUserState extends State<ViewUser> {
               ),
               Row(
                 children: [
-                  const Text('Contact',
+                  const Text('Date',
                       style: TextStyle(
-                          color: Colors.teal,
+                          color: Colors.blue,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(
@@ -69,7 +69,7 @@ class _ViewUserState extends State<ViewUser> {
                 children: [
                   const Text('Description',
                       style: TextStyle(
-                          color: Colors.teal,
+                          color: Colors.blue,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   const SizedBox(

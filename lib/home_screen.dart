@@ -1,36 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:project_ict602/main_crud.dart';
-import 'Screens/Location/current_location_screen.dart';
+import 'package:project_ict602/Screens/Location/current_location_screen.dart';
+import 'Screens/Welcome/welcome_screen.dart';
+import 'main_crud.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+void main() => runApp(MyHomepage());
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class MyHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Flutter Google Maps"),
-        centerTitle: true,
+    final appTitle = 'LIFESAVER: HEALTH GUARDIAN!';
+
+    return MaterialApp(
+      title: appTitle,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          children: [
-            ElevatedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                return const CurrentLocationScreen();
-              }));
-            }, child: const Text("User current location")),
-            ElevatedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                return const MyHomePage();
-              }));
-            }, child: const Text("CRUD")),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(appTitle),
+        ),
+        body: ListView(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.people),
+                title: Text('Health Records'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => crudPage()),
+                  );
+                }
+            ),
+            ListTile(
+              leading: Icon(Icons.my_location),
+              title: Text('My Location'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CurrentLocationScreen()),
+                  );
+                }
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                  );
+                }
+            ),
           ],
         ),
       ),

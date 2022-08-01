@@ -32,7 +32,7 @@ class _EditUserState extends State<EditUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("LIFESAVER: HEALTH GUARDIAN"),
+        title: const Text("Health Records"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -41,10 +41,10 @@ class _EditUserState extends State<EditUser> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Edit New User',
+                'Edit New Records',
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.teal,
+                    color: Colors.blue,
                     fontWeight: FontWeight.w500),
               ),
               const SizedBox(
@@ -54,10 +54,10 @@ class _EditUserState extends State<EditUser> {
                   controller: _userNameController,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    hintText: 'Enter Name',
-                    labelText: 'Name',
+                    hintText: 'Enter Health Condition',
+                    labelText: 'Health Condition',
                     errorText:
-                    _validateName ? 'Name Value Can\'t Be Empty' : null,
+                    _validateName ? 'Health Condition Value Can\'t Be Empty' : null,
                   )),
               const SizedBox(
                 height: 20.0,
@@ -66,10 +66,10 @@ class _EditUserState extends State<EditUser> {
                   controller: _userContactController,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    hintText: 'Enter Contact',
-                    labelText: 'Contact',
+                    hintText: 'Enter Date',
+                    labelText: 'Date',
                     errorText: _validateContact
-                        ? 'Contact Value Can\'t Be Empty'
+                        ? 'Date Value Can\'t Be Empty'
                         : null,
                   )),
               const SizedBox(
@@ -93,7 +93,7 @@ class _EditUserState extends State<EditUser> {
                   TextButton(
                       style: TextButton.styleFrom(
                           primary: Colors.white,
-                          backgroundColor: Colors.teal,
+                          backgroundColor: Colors.blue,
                           textStyle: const TextStyle(fontSize: 15)),
                       onPressed: () async {
                         setState(() {
@@ -121,7 +121,7 @@ class _EditUserState extends State<EditUser> {
                           Navigator.pop(context,result);
                         }
                       },
-                      child: const Text('Update Details')),
+                      child: const Text('Update Records')),
                   const SizedBox(
                     width: 10.0,
                   ),
@@ -135,7 +135,7 @@ class _EditUserState extends State<EditUser> {
                         _userContactController.text = '';
                         _userDescriptionController.text = '';
                       },
-                      child: const Text('Clear Details'))
+                      child: const Text('Clear Records'))
                 ],
               )
             ],

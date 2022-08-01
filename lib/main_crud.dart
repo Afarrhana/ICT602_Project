@@ -15,24 +15,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Health Records',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const crudPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class crudPage extends StatefulWidget {
+  const crudPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<crudPage> createState() => _crudPage();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _crudPage extends State<crudPage> {
   late List<User> _userList = <User>[];
   final _userService = UserService();
 
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return AlertDialog(
             title: const Text(
               'Are You Sure to Delete',
-              style: TextStyle(color: Colors.teal, fontSize: 20),
+              style: TextStyle(color: Colors.blue, fontSize: 20),
             ),
             actions: [
               TextButton(
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextButton(
                   style: TextButton.styleFrom(
                       primary: Colors.white, // foreground
-                      backgroundColor: Colors.teal),
+                      backgroundColor: Colors.blue),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("LIFESAVER: HEALTH GUARDIAN"),
+        title: const Text("Health Records"),
       ),
       body: ListView.builder(
           itemCount: _userList.length,
@@ -138,14 +138,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             if (data != null) {
                               getAllUserDetails();
                               _showSuccessSnackBar(
-                                  'User Detail Updated Success');
+                                  'User Records Updated Success');
                             }
                           });
                           ;
                         },
                         icon: const Icon(
                           Icons.edit,
-                          color: Colors.teal,
+                          color: Colors.blue,
                         )),
                     IconButton(
                         onPressed: () {
@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
               .then((data) {
             if (data != null) {
               getAllUserDetails();
-              _showSuccessSnackBar('User Detail Added Success');
+              _showSuccessSnackBar('User Records Added Success');
             }
           });
         },

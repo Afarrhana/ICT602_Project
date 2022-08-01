@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_ict602/Homepage.dart';
+import 'package:project_ict602/main_location.dart';
 import 'package:project_ict602/home_screen.dart';
+import 'package:project_ict602/main_crud.dart';
 
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
@@ -51,7 +52,7 @@ class LoginForm extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyApp()),
+                  MaterialPageRoute(builder: (context) => MyHomepage()),
                 );
               },
               child: Text(

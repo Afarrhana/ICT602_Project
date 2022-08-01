@@ -21,7 +21,7 @@ class _AddUserState extends State<AddUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("LIFESAVER: HEALTH GUARDIAN"),
+        title: const Text("Health Records"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -30,10 +30,10 @@ class _AddUserState extends State<AddUser> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Add New User',
+                'Add New Record',
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.teal,
+                    color: Colors.blue,
                     fontWeight: FontWeight.w500),
               ),
               const SizedBox(
@@ -43,10 +43,10 @@ class _AddUserState extends State<AddUser> {
                   controller: _userNameController,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    hintText: 'Enter Name',
-                    labelText: 'Name',
+                    hintText: 'Enter Health Condition',
+                    labelText: 'Health Condition',
                     errorText:
-                    _validateName ? 'Name Value Can\'t Be Empty' : null,
+                    _validateName ? 'Health Condition Value Can\'t Be Empty' : null,
                   )),
               const SizedBox(
                 height: 20.0,
@@ -55,10 +55,10 @@ class _AddUserState extends State<AddUser> {
                   controller: _userContactController,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    hintText: 'Enter Contact',
-                    labelText: 'Contact',
+                    hintText: 'Enter Date',
+                    labelText: 'Date',
                     errorText: _validateContact
-                        ? 'Contact Value Can\'t Be Empty'
+                        ? 'Date Value Can\'t Be Empty'
                         : null,
                   )),
               const SizedBox(
@@ -82,7 +82,7 @@ class _AddUserState extends State<AddUser> {
                   TextButton(
                       style: TextButton.styleFrom(
                           primary: Colors.white,
-                          backgroundColor: Colors.teal,
+                          backgroundColor: Colors.blue,
                           textStyle: const TextStyle(fontSize: 15)),
                       onPressed: () async {
                         setState(() {
@@ -109,7 +109,7 @@ class _AddUserState extends State<AddUser> {
                           Navigator.pop(context,result);
                         }
                       },
-                      child: const Text('Save Details')),
+                      child: const Text('Save Records')),
                   const SizedBox(
                     width: 10.0,
                   ),
@@ -123,7 +123,7 @@ class _AddUserState extends State<AddUser> {
                         _userContactController.text = '';
                         _userDescriptionController.text = '';
                       },
-                      child: const Text('Clear Details'))
+                      child: const Text('Clear Records'))
                 ],
               )
             ],
